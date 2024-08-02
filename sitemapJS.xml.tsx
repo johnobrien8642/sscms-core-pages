@@ -1,6 +1,6 @@
-import connectDb from '../lib/mongodb';
+import connectDb from './lib/mongodb';
 import { NextApiResponse } from 'next';
-import Page, { PageType } from '../models/Page';
+import Page, { PageType } from './models/Page';
 
 function generateSiteMap(data: PageType[]) {
 	return `<?xml version="1.0" encoding="UTF-8"?>
