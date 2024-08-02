@@ -44,6 +44,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 					try {
 						await s3.deleteObject({ Bucket: process.env.NEXT_PUBLIC_S3_BUCKET_NAME ?? '', Key: key }, function (err: any, data) {
 							console.log(err)
+							//@ts-ignore
 							if (err) errors.push(err);
 						});
 					} catch (err) {
