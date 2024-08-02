@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import connectDb from '../../lib/mongodb.js';
-import Admin from '../../models/Admin.ts';
+import connectDb from 'core/lib/mongodb.js';
+import Admin from 'core/models/Admin';
 import jwt from 'jsonwebtoken';
-import AdminHeader from '../../../util/components/system/AdminHeader.tsx';
-import { ManagePageFormProvider, dataInitialValue } from '../../../util/contexts/useManagePageForm.tsx';
+import AdminHeader from '@core/components/system/AdminHeader';
+import { useRouter } from 'next/router';
+import { ManagePageFormProvider, dataInitialValue } from '@core/contexts/useManagePageForm';
 import Head from 'next/head';
-import FormPage from '../../../util/components/system/FormPage.tsx';
+import { AllDocUnionType } from '@core/components/types/util_types';
+import FormPage from '@core/components/system/FormPage';
 import { GetServerSideProps, NextPage } from 'next';
 
 const ManagePages: NextPage<{}> = () => {
@@ -31,10 +33,10 @@ const ManagePages: NextPage<{}> = () => {
 				setTopLevelModal={setTopLevelModal}
 				topLevelModal={topLevelModal}
 			>
-				<AdminHeader selected='Blog' />
+				<AdminHeader selected='Pages' />
 				<FormPage 
-					formType='BlogPost' 
-					pageManagerKey='blogPostIds'
+					formType='Page' 
+					pageManagerKey='pageIds'
 				/>
 			</ManagePageFormProvider>
 		</>

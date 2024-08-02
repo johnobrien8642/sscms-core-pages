@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import connectDb from '../lib/mongodb.js';
-import Post from '../models/Post';
+import connectDb from '@core/lib/mongodb.js';
+import Post from '@core/models/Post';
 export const config = {
 	api: {
 		bodyParser: {

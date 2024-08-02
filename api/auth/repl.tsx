@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import models from '../auth/repl'
-import dbConnect from '../../lib/mongodb'
+import models from './repl'
+import dbConnect from '@core/lib/mongodb'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 	const { codeString } = req.body;

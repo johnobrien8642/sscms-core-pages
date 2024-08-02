@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import models from '../lib/index';
+import models from '@core/lib/index';
 import aws from 'aws-sdk'
-import connectDb from '../lib/mongodb';
+import connectDb from '@core/lib/mongodb';
 export const config = {
 	api: {
 		bodyParser: {
